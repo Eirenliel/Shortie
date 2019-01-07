@@ -1,0 +1,46 @@
+{
+  "name": "shortie",
+  "version": "0.0.1",
+  "description": "Lightweight URL shortener",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run build && DEBUG=shortie:* node dist/index.js",
+    "start-windows": "npm run build && set DEBUG=shortie:* && node dist/index.js",
+    "build": "babel src -d dist",
+    "lint": "eslint src",
+    "pre-commit": "(npm run lint) || exit 1",
+    "hooks": "(echo '#!/bin/sh' && echo 'npm run pre-commit') > .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit",
+    "hooks-windows": "(echo #!/bin/sh && echo npm run pre-commit) > .git/hooks/pre-commit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eirenliel/Shortie.git"
+  },
+  "keywords": [
+    "url",
+    "shortener"
+  ],
+  "author": "Eiren Rain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Eirenliel/Shortie/issues"
+  },
+  "homepage": "https://github.com/Eirenliel/Shortie#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "body-parser": "^1.18.3",
+    "debug": "^4.1.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.2",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "@slimonitor/eslint-config": "git+https://github.com/Slimonitor/eslint-config.git",
+    "eslint": "^5.12.0"
+  }
+}
