@@ -9,7 +9,8 @@ module.exports = {
     },
     url: {
         length: 4,
-        mixedCase: true
+        mixedCase: true,
+        prefix: 'http://localhost/'
     },
     mongoDbUrl: 'mongodb://<user>:<password>@<host>:<port>/<database>',
     mongooseOptions: {
