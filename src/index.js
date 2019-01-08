@@ -46,7 +46,7 @@ function errorHandler(err, req, res, next) {
     if (err) {
         debug('ERROR', err.toString());
         res.json({
-            error: true,
+            error: 'ERROR',
             message: err.toString()
         });
     } else {

@@ -10,7 +10,7 @@ module.exports = {
         }).then(() => {
             urls.getUrl(req.params.handle).then(url => {
                 if(!url) {
-                    res.status(404).send({error: 'Requested url not found'});
+                    res.status(404).json({error: 'NOT FOUND', message: 'Requested url not found'});
                 } else {
                     res.redirect(url.target);
                 }

@@ -18,7 +18,7 @@ module.exports = {
             else
                 return urls.createUrl(req.body.target);
         }).then((url) => {
-            res.send({error: false, status: 'OK', handle: url.handle, url: prefix + url.handle, target: url.target});
+            res.json({message: 'OK', handle: url.handle, url: prefix + url.handle, target: url.target});
         }).catch(next);
     }
 };
