@@ -25,10 +25,10 @@ privateApi.get('/set', (req, res, next) => {
         assert.ok(typeof(req.query.target) === 'string', 'Target must be a string');
         req.body.target = decodeURIComponent(req.query.target);
     }
-    if(config.privateApi.password) {
+    if(config.privatePassword) {
         assert.ok(typeof(req.query.pwd) === 'string', 'Password must be a string');
         req.body.pwd = decodeURIComponent(req.query.pwd);
-        assert.ok(req.query.pwd === config.privateApi.password, 'Private API password does not match');
+        assert.ok(req.query.pwd === config.privatePassword, 'Private API password does not match');
     }
     next();
 });
