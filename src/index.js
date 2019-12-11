@@ -25,6 +25,11 @@ privateApi.get('/set', (req, res, next) => {
         assert.ok(typeof(req.query.target) === 'string', 'Target must be a string');
         req.body.target = decodeURIComponent(req.query.target);
     }
+    if(config.privateApi.password) {
+        assert.ok(typeof(req.query.pwd) === 'string', 'Password must be a string');
+        req.body.pwd = decodeURIComponent(req.query.pwd);
+        assert.ok(req.query.pwd === config.privateApi.password, 'Private API password does not match');
+    }
     next();
 });
 privateApi.all('/set', require('./privateHandlers.js').set);

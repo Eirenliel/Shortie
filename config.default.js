@@ -6,6 +6,7 @@ module.exports = {
     privateApi: {
         port: 4081,
         host: '127.0.0.1',
+        password: ''
     },
     url: {
         length: 4,
