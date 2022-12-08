@@ -29,9 +29,9 @@
   "homepage": "https://github.com/Eirenliel/Shortie#readme",
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "body-parser": "^1.18.3",
+    "body-parser": "^1.20.1",
     "debug": "^4.1.1",
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "mongoose": "^5.7.5",
     "request": "^2.88.0",
     "request-promise-native": "^1.0.5"
